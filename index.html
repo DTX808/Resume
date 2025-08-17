@@ -3,23 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume Template</title>
+    <title>FirstName LastName - Resume </title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Contact Information-->
     <header>
-        <h1> FirstName LastName </h1>
-        <address> email@email.com |  XXX XXX XXXX | Street X, Ontario</address>
+        <h1>FirstName LastName</h1>
+        <address>
+             <a href="mailto:email@email.com"> email@email.com</a>  
+             <a href="tel:XXXXXXXXXX"> 438 XXX XXXX</a>
+             Street X
+             <a href="https://github.com/DTX808/"> Github </a>
+        </address>
     </header>
     <main>
-        <section class="summary-container">
-            <h1 class="title"> Summary</h1>
-            <p class="summary-paragraph"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, iure, quas ea hic nostrum, doloribus voluptatem aspernatur natus quia fuga quibusdam voluptate voluptatum recusandae harum. Officiis sunt quisquam dolores mollitia.</p>
+
+        <!-- Summary-->
+        <section class="summary-container" aria-labelledby="summary-title">
+            <h2 class="title"> Summary</h2>
+            <p class="summary-paragraph"> 
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, iure, quas ea hic nostrum, 
+                doloribus voluptatem aspernatur natus quia fuga quibusdam voluptate voluptatum recusandae harum. 
+                Officiis sunt quisquam dolores mollitia.
+            </p>
         </section>
-        <section skills-container> 
+
+        <!-- Skills -->
+        <section class="skills-container" aria-labelledby="skills-title"> 
             <h2 class="title"> Skills</h2>
-            <section class="skills core"> 
-                <h3 class="skill skill-category">Core Skills</h3>
+
+            <!-- Core skills-->
+            <section class="skills core" aria-labelledby="core-skills"> 
+                <h3 id="core-title">Core Skills</h3>
                 <ul>
                     <li></li>
                     <li></li>
@@ -29,8 +45,10 @@
                     <li></li>
                 </ul>
             </section>
-            <section class="skills tech">
-                <h3 class="skill-category">Tech Skills</h3>
+
+            <!-- Tech skills -->
+            <section class="skills tech" aria-labelledby="tech-skills">
+                <h3 id="tech-title">Tech Skills</h3>
                 <ul>
                     <li></li>
                     <li></li>
@@ -41,31 +59,56 @@
                 </ul>
             </section>
         </section>
-        <section class="experience-container">
-            <h2 class="title"> Experience </h2>
-            <h3 class="role" id="roel"> <time datetime="YYYY-MM">Role - Company</time>  </h3>
-            <ul class="experience">
-                    <li></li>
+
+        <!-- Experiences-->    
+        <section class="experience-container" aria-labelledby="experience-title">
+            <h2 class="title">Experience</h2>
+
+            <article aria-labelledby="exp-1-title">
+                <h3 id="exp-1-title">Role - Company</h3>
+                <p class="meta">
+                    <time datetime="YYYY-MM">YYYY-MM</time> -  
+                    <time datetime="YYYY-MM">YYYY-MM</time> 
+                </p>
+                <ul class="experience">
                     <li></li>
                     <li></li>
                     <li></li>
                     <li></li>
                     <li></li>
             </ul>
-        </section>
-        <section class="education-container">
-            <h2> Education and Training </h2>
-            <article class="Education">
-                <h3> Institution | Location <time datetime="YYYY-MM"> YYYY-MM</time></h3>
-                <h3> Degree | Field <time datetime="YYYY-MM"> YYYY-MM</time></h3>
-            </article>
-            <article class="Education">
-                <h3> Institution | Location <time datetime="YYYY-MM"> YYYY-MM</time></h3>
-                <h3> Degree | Field <time datetime="YYYY-MM"> YYYY-MM</time></h3>
+
             </article>
         </section>
-        <section class="coursework-container">
-            <h2 class="title"> RELEVANT COURSEWORK </h2>
+
+        <!-- Education -->
+        <section class="education-container" aria-labelledby="education-title">
+            <h2 class="title"> Education and Training </h2>
+            
+            <article class="education" aria-labelledby="edu-1-title">
+                <h3>Degree | Institution</h3>
+                <p class="meta"> 
+                <time datetime="YYYY-MM"> YYYY-MM</time> -
+                <time datetime="YYYY-MM"> YYYY-MM</time>
+                | Location
+                </p>
+                <p>Concentration</p>
+            </article>
+            <article class="education" aria-labelledby="edu-1-title">
+                <h3>Degree | Institution</h3>
+                <p class="meta"> 
+                <time datetime="YYYY-MM"> YYYY-MM</time> -
+                <time datetime="YYYY-MM"> YYYY-MM</time>
+                | Location
+                </p>
+                <p>Concentration</p>
+            </article>
+            
+        </section>
+
+        <!-- Coursework -->    
+        <section class="coursework-container" aria-labelledby="coursework-title">
+            <h2 class="title"> Relevant Coursework </h2>
             <article>
                 <ul>
                     <li></li>
@@ -79,16 +122,28 @@
                 </ul>
             </article>
         </section>
-        <section class="lang-container">
+
+        <!-- Languages-->
+        <section class="lang-container" aria-labelledby="language-title">
             <h2 class="title"> Languages </h2>
-            <label for="English"> English</label>
-            <meter id="English" min="0" max="5" value="4"> Fluent</meter>
-            <label for="French"> French</label>
-            <meter id="French" class="good" min="0" max="5" value="5"> Native</meter>
-            <label for="Arabic"> Arabic</label>
-            <meter id="Arabic" class="good" min="0" max="5" value="4"> Very good</meter>
-            <label for="berber"> Amazigh - Berber</label>
-            <meter id="berber" class="native" min="0" max="5" value="5"> Native </meter>
+            <ul>
+                <li> 
+                    <label for="english"> English</label>
+                    <meter id="english" min="0" max="5" value="4"> Fluent</meter>
+                </li>
+                <li>    
+                    <label for="french"> French</label>
+                    <meter id="french" class="good" min="0" max="5" value="5"> Native</meter>
+                </li>
+                <li>
+                    <label for="arabic"> Arabic</label>
+                    <meter id="arabic" class="good" min="0" max="5" value="4"> Very good</meter>
+                </li>
+                <li>    
+                    <label for="berber"> Kabyle </label>   
+                    <meter id="berber" class="native" min="0" max="5" value="5"> Native </meter>
+                </li>    
+                </ul>
         </section>
     </main>
 </body>
