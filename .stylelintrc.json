@@ -1,0 +1,56 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "color-hex-length": "short",
+    "color-named": "never",
+    "declaration-block-no-duplicate-properties": true,
+    "no-descending-specificity": null, 
+    "order/properties-order": [
+      {
+        "groupName": "Positioning",
+        "properties": ["position", "inset", "top", "right", "bottom", "left", "z-index"]
+      },
+      {
+        "groupName": "Display & Flex/Grid",
+        "properties": [
+          "display", "visibility", "place-content", "place-items", "place-self",
+          "flex", "flex-grow", "flex-shrink", "flex-basis",
+          "flex-flow", "flex-direction", "flex-wrap",
+          "grid", "grid-auto-flow", "grid-template", "grid-template-rows", "grid-template-columns",
+          "grid-row", "grid-column", "justify-content", "align-items", "gap", "row-gap", "column-gap"
+        ]
+      },
+      {
+        "groupName": "Box Model",
+        "properties": [
+          "box-sizing", "width", "min-width", "max-width",
+          "height", "min-height", "max-height",
+          "margin", "margin-inline", "margin-block",
+          "padding", "padding-inline", "padding-block",
+          "border", "border-radius", "outline"
+        ]
+      },
+      {
+        "groupName": "Typography",
+        "properties": [
+          "font", "font-family", "font-size", "font-weight", "line-height",
+          "letter-spacing", "text-align", "text-transform", "text-decoration",
+          "white-space", "word-break", "hyphens", "color"
+        ]
+      },
+      {
+        "groupName": "Visual",
+        "properties": ["background", "background-color", "background-image", "background-size", "box-shadow", "opacity"]
+      },
+      {
+        "groupName": "Animation & Transitions",
+        "properties": ["transition", "transition-property", "transition-duration", "transition-timing-function", "animation"]
+      },
+      {
+        "groupName": "Misc",
+        "properties": ["cursor", "pointer-events", "will-change"]
+      }
+    ]
+  }
+}
