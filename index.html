@@ -7,20 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <!-- Contact Information-->
-    <header>
-        <h1>FirstName LastName</h1>
-        <address>
-             <a href="mailto:email@email.com"> email@email.com</a>  
-             <a href="tel:XXXXXXXXXX"> 438 XXX XXXX</a>
-             Street X
+    <header class="header">
+        <h1>Madi Tarik</h1>
+        <address class="address">
+             <a href="mailto:email@email.com"> slct.rika@gmail.com</a>  
+             <a href="tel:+1XXXXXXXXXX"> 438 XXX XXXX</a> 
+             Street X 
              <a href="https://github.com/DTX808/"> Github </a>
         </address>
     </header>
-    <main>
+    <main class="container">
 
         <!-- Summary-->
-        <section class="summary-container" aria-labelledby="summary-title">
+        <section class="summary-container" aria-label="summary-title">
             <h2 class="title"> Summary</h2>
             <p class="summary-paragraph"> 
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, iure, quas ea hic nostrum, 
@@ -30,11 +31,11 @@
         </section>
 
         <!-- Skills -->
-        <section class="skills-container" aria-labelledby="skills-title"> 
+        <section class="skills-container" aria-label="skills-title"> 
             <h2 class="title"> Skills</h2>
-
+            <div class="core-tech">
             <!-- Core skills-->
-            <section class="skills core" aria-labelledby="core-skills"> 
+            <section class="skills core" aria-label="core-skills"> 
                 <h3 id="core-title">Core Skills</h3>
                 <ul>
                     <li></li>
@@ -47,7 +48,7 @@
             </section>
 
             <!-- Tech skills -->
-            <section class="skills tech" aria-labelledby="tech-skills">
+            <section class="skills tech" aria-label="tech-skills">
                 <h3 id="tech-title">Tech Skills</h3>
                 <ul>
                     <li></li>
@@ -58,13 +59,14 @@
                     <li></li>
                 </ul>
             </section>
+            </div>
         </section>
 
         <!-- Experiences-->    
-        <section class="experience-container" aria-labelledby="experience-title">
+        <section class="experience-container" aria-label="experience-title">
             <h2 class="title">Experience</h2>
 
-            <article aria-labelledby="exp-1-title">
+            <article aria-label="exp-1-title">
                 <h3 id="exp-1-title">Role - Company</h3>
                 <p class="meta">
                     <time datetime="YYYY-MM">YYYY-MM</time> -  
@@ -82,10 +84,10 @@
         </section>
 
         <!-- Education -->
-        <section class="education-container" aria-labelledby="education-title">
+        <section clatel:+1XXXXXXXXXXss="education-container" aria-label="education-title">
             <h2 class="title"> Education and Training </h2>
             
-            <article class="education" aria-labelledby="edu-1-title">
+            <article class="education" aria-label="edu-1-title">
                 <h3>Degree | Institution</h3>
                 <p class="meta"> 
                 <time datetime="YYYY-MM"> YYYY-MM</time> -
@@ -94,7 +96,7 @@
                 </p>
                 <p>Concentration</p>
             </article>
-            <article class="education" aria-labelledby="edu-1-title">
+            <article class="education" aria-label="edu-1-title">
                 <h3>Degree | Institution</h3>
                 <p class="meta"> 
                 <time datetime="YYYY-MM"> YYYY-MM</time> -
@@ -107,7 +109,7 @@
         </section>
 
         <!-- Coursework -->    
-        <section class="coursework-container" aria-labelledby="coursework-title">
+        <section class="coursework-container" aria-label="coursework-title">
             <h2 class="title"> Relevant Coursework </h2>
             <article>
                 <ul>
@@ -124,8 +126,9 @@
         </section>
 
         <!-- Languages-->
-        <section class="lang-container" aria-labelledby="language-title">
+        <section class="lang-container" aria-label="language-title">
             <h2 class="title"> Languages </h2>
+            <div class="lang-layout">
             <ul>
                 <li> 
                     <label for="english"> English</label>
@@ -144,6 +147,7 @@
                     <meter id="berber" class="native" min="0" max="5" value="5"> Native </meter>
                 </li>    
                 </ul>
+            </div>    
         </section>
     </main>
 </body>
