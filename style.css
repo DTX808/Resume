@@ -1,18 +1,23 @@
-
+/* Tokens */
 :root {
-    --ink: #111827;
+    --ink: #2e3038;
     --muted:#4b5563;
     --rule: #d1d5db;
     --link: rgb(247 92 169/ 90%);
     --active: 2px 2px 5px #fc894d;
     --name: 2.25rem;
-    --sections: 1rem;
-    --items: 1.0675rem;
-    --content-max: 68ch;
+    --sections: 1.225rem;
+    --items: 1.15rem;
+    --contact:1rem;
+    --items-mobile:1.1rem;
+    --text-sm: 0.9375rem;
+    --text-sm-mobile:0.875rem;
     --text-base: 'Segoe UI';
-    --text-sm: 0.875rem;
+    --content-max: 68ch;
+    --meter-width:150px;
     --space-0:0;
     --space-1:0.25rem;
+    --space-1x:0.40rem;
     --space-2:0.5rem;
     --space-3:0.75rem;
     --space-4:1rem;
@@ -22,8 +27,21 @@
     --space-8:2rem;
 }
 
-*,
+/* --- screen-reader-only utility / From ChatGPT --- */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip-path: inset(50%) !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
 *::before,
+*,
 *::after {
     box-sizing: border-box;
     margin: 0;
@@ -31,16 +49,26 @@
 }
 
 h1, h2, h3 {
-    margin-block: var(--space-4) var(--space-2) 
+    margin-block: var(--space-3);
 }
 
 p {
-    margin-block: var(--space-2);
+    margin-block: var(--space-2) var(--space-6);
+     
 }
 
 ul {
-    margin-block-end: var(--space-3); 
-    padding-inline-start: var(--space-4); 
+    margin-block: var(--space-2) var(--space-6); 
+    padding-inline-start: var(--space-5); 
+    list-style-position: outside;
+
+}
+
+li {
+    margin-block: var(--space-2);
+    margin-inline-start: var(--space-2);
+    font-size: var(--text-sm);
+    line-height: 1.4;
 }
 
 h2 {
@@ -54,11 +82,12 @@ h2 {
 h3 {
     font-size: var(--items);
     font-weight: 600;
-    margin-top: var(--space-1);
+    margin-top: var(--space-0);
+    margin-block-end: var(--space-2);
 } 
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:  Verdana, sans-serif;
     line-height: 1.5;
     color: var(--ink);
 }
@@ -66,7 +95,7 @@ body {
 .container{
     max-width: var(--content-max);
     margin-inline: auto;
-    padding: var(--space-5);
+    padding: var(--space-2) var(--space-4);
 }
 
 .header {
@@ -74,8 +103,8 @@ body {
     flex-flow: column;
     justify-content: space-between;
     align-items: center;
-    gap: var(--space-4);
-    padding: var(--space-5);
+    gap: var(--space-1);
+    padding: var(--space-2);
 }
 
 .header h1 { 
@@ -87,11 +116,17 @@ body {
 .address{
     display: flex;
     flex-flow: row;
-    gap: var(--space-8);
-    font-size: var(--items);
+    align-items: baseline;
+    font-style: normal;
+    font-size: var(--contact);
     font-weight: 400;
     text-transform: none;
     color: var(--muted);
+}
+
+.address a[href^="mailto"],
+.address a[href^="tel"] {
+  white-space: nowrap;
 }
 
 a:link, a:visited {
@@ -108,16 +143,10 @@ a:active {
     box-shadow: var(--active) ;
 }
 
-a:focus {
-    text-decoration: underline; /* Same as hover */
-    color: var(--link);
-}
-
 a:focus-visible {
     outline: 2px solid var(--link);
     outline-offset: 2px;
 }
-
 
 h2.title {
     display: grid;
@@ -138,14 +167,28 @@ h2.title::after {
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: start;
+    column-gap: var(--space-5);
 }
 
 .meta {
     font-size: var(--text-sm);
     font-weight: 400;
     color: var(--muted);
-    margin-top: var(--space-1);
+
+    /* margin-top: var(--space-2); */
   
+}
+
+.meta-wrapper{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  
+}
+
+.meta-wrapper p {
+    margin-block-start: var(--space-1);
 }
 
 .lang-layout {
@@ -153,7 +196,12 @@ h2.title::after {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
-    gap: var(--space-3);
+    gap: 0 var(--space-2);
+}
+
+meter {
+    width: var(--meter-width) ;
+
 }
 
 @media (width <= 780px) {
@@ -161,18 +209,43 @@ h2.title::after {
        grid-template-columns: 1fr;
     }
 
-    .address{
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--space-2);
+    h3{
+        font-size: var(--items-mobile);
     }
+
+    li, p {
+        font-size: var(--text-sm-mobile);
+    }
+
+    .meta {
+    font-size: var(--text-sm-mobile);
+    }
+    
+
+    .address{
+        display: flex;
+        flex-flow: column;
+        gap: var(--space-2);
+      }
+
+.contact-item::before {
+    content: "•";
+    margin-inline: var(--space-2);
+}
+
 }
 
 .core h3, .tech h3 {
-    font-size: var(--items);
+    padding: var(--space-0);
+    margin-block-end: var(--space-2);
     font-weight: 400;
+    text-align: center;
+    color: var(--muted);
+}
 
+.core h3::before, .tech h3::before{
+    content: "•";
+    margin-inline: var(--space-1);
 }
 
 @media print {
@@ -184,21 +257,70 @@ h2.title::after {
         print-color-adjust: exact;
     }
 
-.container,
-    header,
-    .experience-container,
-    .education-container,
-    .skills-container,
     article {
         break-inside: avoid;
     }
+ 
+.container { 
+    max-width: none;
+     padding: 0; 
+    }
+
+    .core-tech { 
+    grid-template-columns: 1fr 1fr; 
+    column-gap: var(--space-6);
+  }
+
+   .address { 
+    display: flex; 
+    flex-flow: row nowrap;             
+    gap: var(--space-2);
+  }
     
-    /* Show URLs in print */
-    a::after {
+
+    h2 {
+        break-after: avoid;
+    }
+
+    p, li {
+        orphans: 2;
+        widows:2;
+    }
+
+     /* a[href^="https/"]::after {
         content: " (" attr(href) ")";
         font-size: 0.8em;
         color: #666;
     }
-    
+     */
 }
 
+.contact-item:not(:first-child)::before {
+    content: "•";
+    margin-inline: var(--space-2);
+}
+
+.lang-description {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: 400;
+    color: var(--muted);
+    margin-block-start: var(--space-0);
+   
+}
+
+.company-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.company-date p {margin-block: var(--space-2) var(--space-1);}
+
+.italic { font-style: italic;}
+
+.education h3 {
+    margin-block: var(--space-2) var(--space-0);
+}
