@@ -1,6 +1,6 @@
 /* Tokens */
 :root {
-    --ink: #0e121c;
+    --ink: #2e3038;
     --muted:#4b5563;
     --rule: #d1d5db;
     --link: rgb(247 92 169/ 90%);
@@ -83,6 +83,7 @@ h3 {
     font-size: var(--items);
     font-weight: 600;
     margin-top: var(--space-0);
+    margin-block-end: var(--space-2);
 } 
 
 body {
@@ -186,6 +187,10 @@ h2.title::after {
   
 }
 
+.meta-wrapper p {
+    margin-block-start: var(--space-1);
+}
+
 .lang-layout {
     display: grid;
     grid-template-rows: 1fr 1fr;
@@ -255,7 +260,7 @@ meter {
     article {
         break-inside: avoid;
     }
-
+ 
 .container { 
     max-width: none;
      padding: 0; 
@@ -271,6 +276,7 @@ meter {
     flex-flow: row nowrap;             
     gap: var(--space-2);
   }
+    
 
     h2 {
         break-after: avoid;
@@ -311,6 +317,10 @@ meter {
     align-items: baseline;
 }
 
-.company-date p {margin-block: var(--space-0) var(--space-1);}
+.company-date p {margin-block: var(--space-2) var(--space-1);}
 
 .italic { font-style: italic;}
+
+.education h3 {
+    margin-block: var(--space-2) var(--space-0);
+}
